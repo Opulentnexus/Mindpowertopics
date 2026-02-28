@@ -1,26 +1,30 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    // Select all individual links inside the navigation
+    const allLinks = document.querySelectorAll('.nav-links a');
 
+    if(menuBtn) {
+        menuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                menuBtn.innerHTML = "✕";
+            } else {
+                menuBtn.innerHTML = "☰";
+            }
+        });
+    }
 
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-const closeBtn = document.getElementById("closeBtn");
-
-// Open menu
-hamburger.addEventListener("click", () => {
-  mobileMenu.classList.add("active");
-});
-
-// Close menu (X button)
-closeBtn.addEventListener("click", () => {
-  mobileMenu.classList.remove("active");
-});
-
-// Close menu when any link is clicked
-const menuLinks = document.querySelectorAll(".mobile-menu-content a");
-
-menuLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-  });
+    /* --- NEW LOGIC TO CLOSE MENU ON CLICK --- */
+    allLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Remove the active class to hide the menu
+            navLinks.classList.remove('active');
+            // Change the X back to the Hamburger icon
+            menuBtn.innerHTML = "☰";
+        });
+    });
 });
 window.addEventListener("scroll", function () {
 
@@ -58,4 +62,5 @@ document.getElementById("whatsappForm").addEventListener("submit", function(e) {
     var url = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
 
     window.open(url, "_blank");
+
 });
