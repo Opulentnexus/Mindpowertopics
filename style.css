@@ -90,10 +90,8 @@ html {
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 0;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -709,4 +707,5 @@ section h2::after {
     background-position: right center;
     transform: translateY(-4px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+
 }
