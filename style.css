@@ -70,93 +70,97 @@ html {
 
 
 
+/* ================= CONTAINER ================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
 /* ================= NAVBAR ================= */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+     border-radius: 0 0 25px 25px;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 8%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0; /* Ensure it starts at the very edge */
-    background: rgba(255,255,255,0.95); /* Slightly more solid for mobile readability */
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    z-index: 2000; /* Set very high to stay above product grids */
-    box-sizing: border-box; /* Prevents width issues */
+    padding: 18px 0;
 }
 
 .logo {
-    font-family: "Smooch Sans", sans-serif;
-    font-size: 34px;
-    color: var(--gold);
-    letter-spacing: 2px;
-    z-index: 2100; /* Keeps logo above mobile menu */
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #2563eb, #06b6d4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+     font-family: "Montserrat", sans-serif;
+    
 }
 
-/* Desktop Navigation */
-.navbar nav a {
-    margin-left: 30px;
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.2rem;  /* smaller size for mobile */
+    }
+}
+
+@media (min-width: 1025px) {
+    .logo {
+        margin-left: -50px; /* adjust value */
+    }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
     text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 400;
+    font-weight: 500;
+    color: #1e293b;
+     font-family: "Montserrat", sans-serif;
     position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #2563eb;
+    left: 0;
+    bottom: -6px;
     transition: 0.3s;
 }
 
-/* 1. ADD THIS: Hide hamburger by default (Desktop) */
-.menu-btn {
-    display: none; 
-}
-
-
-/* ================= MOBILE NAV FIX ================= */
-@media (max-width: 768px) {
-    /* Force the hamburger to be visible and clickable */
-    .menu-btn {
-        display: block !important; 
-        font-size: 30px;
-        cursor: pointer;
-        z-index: 10001; /* Extremely high */
-        position: relative;
-    }
-
-    /* The Navigation Overlay */
-  /* The Navigation Overlay */
-.nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%; 
+.nav-links a:hover::after {
     width: 100%;
-    height: 100vh;
-    
-    /* Use RGBA for transparency: 0.8 means 80% white, 20% transparent */
-    background: rgba(255, 255, 255, 0.8) !important; 
-    
-    /* This creates the 'Glass' effect */
-    backdrop-filter: blur(12px) !important; 
-    -webkit-backdrop-filter: blur(12px); 
-    
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    
-    transition: 0.4s ease-in-out;
-    z-index: 10000; 
 }
 
-    /* When the menu is open */
-    .nav-links.active {
-        right: 0 !important;
-    }
+.nav-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    
+    border: none;
+    cursor: pointer;
+}
 
-    .nav-links a {
-        font-size: 24px;
-        margin: 0 !important; /* Remove desktop margins */
-        color: #1a1a1a;
+@media (min-width: 1025px) {
+    .nav-links {
+        margin-left: auto;
+        margin-right: -30px; /* adjust this value */
     }
 }
 
@@ -705,6 +709,4 @@ section h2::after {
     background-position: right center;
     transform: translateY(-4px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-
 }
-
