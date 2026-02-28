@@ -91,6 +91,7 @@ html {
 
 .navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 18px 0;
 }
@@ -159,7 +160,7 @@ html {
 @media (min-width: 1025px) {
     .nav-links {
         margin-left: auto;
-        margin-right: -40px; /* adjust this value */
+        margin-right: -30px; /* adjust this value */
     }
 }
 
@@ -709,5 +710,6 @@ section h2::after {
     transform: translateY(-4px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
+
 
 
