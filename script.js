@@ -47,7 +47,7 @@ document.getElementById("whatsappForm").addEventListener("submit", function(e) {
     var email = document.getElementById("email").value;
     var message = document.getElementById("message").value;
 
-    var phoneNumber = "917942683888"; // 🔥 Replace with your WhatsApp number (with country code, no +)
+    var phoneNumber = "919656590426"; // 🔥 Replace with your WhatsApp number (with country code, no +)
 
     var whatsappMessage =
         "Hello Dr. O. J. Scaria,%0A%0A" +
@@ -59,3 +59,4 @@ document.getElementById("whatsappForm").addEventListener("submit", function(e) {
 
     window.open(url, "_blank");
 });
+
