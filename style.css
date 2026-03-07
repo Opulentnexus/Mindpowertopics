@@ -785,7 +785,7 @@ section h2::after {
 
 
 .footer-logo img {
-    width: 138px;      /* your small size */
+     width: 112px;      /* your small size */
     height: auto;
     display: block;
 }
@@ -913,4 +913,5 @@ section h2::after {
 .testimonials h2 {
     margin-bottom: 60px;
 }
+
 
